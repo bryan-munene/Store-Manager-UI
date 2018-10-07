@@ -1,4 +1,4 @@
-# Store-Manager-UI-
+# Store-Manager-UI
 
 
 ![license](https://img.shields.io/github/license/mashape/apistatus.svg)
