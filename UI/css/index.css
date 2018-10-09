@@ -148,8 +148,7 @@ html, body {
   justify-content: center;
   
   transform: translateZ(-1px) scale(2);
-  background-image: url(../images/bg.jpg);
-  
+    
 }
 
 
