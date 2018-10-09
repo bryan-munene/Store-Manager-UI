@@ -1,0 +1,176 @@
+html, body {
+  font-family: Open Sans;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.name {
+  letter-spacing: -15px;
+  font-family: Chiller;
+  color: rgb(21, 182, 231);
+  text-align: center;
+  font-size: 200px;
+  font-weight: 800;
+  line-height: 200px;
+}
+
+
+#account{
+	position: fixed;
+	width: 200px;
+	
+	background: #151719;
+	right: -200px;
+	
+		
+}
+
+
+#account.active{
+	right: 0px;
+}
+
+#account .toggle-btn1{
+	position: absolute;
+	right: 215px;
+	
+}
+
+#account .toggle-btn1 span{
+	display: block;
+	width: 70px;
+	height: 15px;
+	background-color: #2ab7ec;
+	margin: 10px 4px;
+}
+
+#account .toggle-btn1 span:hover {
+    background-color: RoyalBlue;
+    cursor: pointer;
+}
+
+
+.dropbtn1 {
+	color: rgba(230,230,230,0.9);
+	list-style: none;
+	padding: 16px 12px;
+	border-bottom: 1px solid rgba(100,100,100,0.3);
+    font-size: 16px;
+    cursor: pointer;
+    width: 220px;
+}
+
+.dropdown1 button{
+	width: 220px;
+    background-color: #151719;
+    color: rgba(230,230,230,0.9);
+    border-bottom: 1px solid rgba(100,100,100,0.3);
+    align-self: center;
+    font-family: arial;
+    font-size: 16px;
+}
+.dropdown1 {
+    position: relative;
+    display: inline-block;
+    width: 220px;
+    background-color: #151719;
+    color: rgba(230,230,230,0.9);
+}
+
+.dropdown-content1 {
+    display: none;
+    position: absolute;
+    background-color: #B8B8B8;
+    /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+    z-index: 1;
+    width: 220px;
+ 
+}
+
+.dropdown-content1 a {
+	text-decoration: none;
+	display: block;
+	color: #666666;
+	list-style: inside;
+	padding: 16px 12px;
+	border-bottom: 1px solid rgba(100,100,100,0.3);
+	width: auto;
+}
+
+.dropdown-content1 a:hover {
+	background-color: #f1f1f1;
+	color: black;
+}
+
+.dropdown1:hover .dropdown-content1 {
+    display: block;
+}
+
+.dropdown1:hover .dropbtn1 {
+    background-color: #2ab7ec;
+}
+
+.MainContainer {
+  perspective: 1px;
+  transform-style: preserve-3d;
+  height: 100vh;
+ 
+ 
+}
+.h11 {
+  letter-spacing: -8px;
+
+  color: white;
+  text-align: center;
+  font-size: 80px;
+  font-weight: 800;
+  line-height: 80px;
+}
+
+.ContentContainer {
+  position: relative;
+  display: block;
+  background-color: white;
+  z-index: 1;
+  background-color: #000000;
+  opacity: 0.8;
+}
+
+.Content {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 75px 0;
+}
+
+.p1 {
+  margin: 75px 0;
+  color: #2ab7ec;
+  letter-spacing: -4px;
+  line-height: 80px;
+  font-size: 50px;
+}
+
+.TitleContainer {
+  display: flex;
+  
+  position: f;
+  z-index: -1;
+  height: 100vh;
+  justify-content: center;
+  
+  transform: translateZ(-1px) scale(2);
+  background-image: url(../images/bg.jpg);
+  
+}
+
+
+
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
