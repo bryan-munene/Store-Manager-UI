@@ -1,24 +1,31 @@
-html { height: 100% }
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+* {
+  transition: 0.8s;
+}
+
+html { 
+  height: 100%;
+}
+
 body { 
   background: #3111;
 }
+
 .login {
   background: #000000;
   border: 1px solid #42464b;
   border-radius: 10px;
   height: auto;
   margin: 20px auto 0;
-  width: 400px;
+  width: 600px;
   position: fixed;
   top: 36%;
-  left: 42%;
+  left: 36%;
   margin-top: -50px;
   margin-left: -100px;
   padding-bottom: 10px;
   opacity: 0.75;
 }
+
 .login h1 {
   background-image: linear-gradient(top, #f1f3f3, #d4dae0);
   border-bottom: 1px solid #a6abaf;
@@ -38,7 +45,6 @@ body {
   text-transform: uppercase;
 }
 
-
 input[type="password"], input[type="text"] {
   border: 1px solid #a1a3a3;
   border-radius: 18px;
@@ -47,14 +53,13 @@ input[type="password"], input[type="text"] {
   height: 39px;
   margin: 31px 0 0 29px;
   padding-left: 37px;
-  width: 350px;
+  width: 550px;
 }
 
 input[type="password"]:focus, input[type="text"]:focus {
   box-shadow: 0 0 4px 1px rgba(55, 166, 155, 0.3);
   outline: 0;
 }
-
 
 .btn {
   background-color: #2ab7ec;
@@ -74,7 +79,6 @@ input[type="password"]:focus, input[type="text"]:focus {
     background-color: RoyalBlue;
 }
 
-
 .forgot {
   color: #FFFFFF;
   display: block;
@@ -86,8 +90,10 @@ input[type="password"]:focus, input[type="text"]:focus {
   top: 5px;
   transition: color .4s;
 }
-.forgot:hover { color: #3300CC }
 
+.forgot:hover { 
+    color: #3300CC;
+}
 
 input[type="submit"] {
   width:100px;
@@ -110,15 +116,10 @@ input[type="submit"] {
   margin-left: -50px;
   cursor:pointer;
   border: none;  
-  background-color: #37a69b;
-  background-image: linear-gradient(top,#3db0a6,#3111);
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius:15px;
+  background-color: #2ab7ec;
+  border-radius: 10px;
   box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78, 0px 10px 5px #999;
 }
-
 
 input[type="submit"]:active {
   top:3px;
