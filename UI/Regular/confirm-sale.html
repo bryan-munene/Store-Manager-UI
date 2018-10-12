@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="HandheldFriendly" content="true">
+    
+    <title>Store Manager | Welcome</title>
+    
+    <link rel="stylesheet" type="text/css" href="../css/tables.css">
+    <link rel="stylesheet" type="text/css" href="../css/template.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+
+  <body>
+    
+        <div id = "Header">
+          <div id="logo">
+            <button><a href="dashboard.html">
+                <h1>STORE</h1>
+                <h1>MANAGER</h1>
+            </a></button>
+          </div>
+    
+          <div id="account">
+            
+            
+            <div class="account-links">
+              <div class="dropdown1">
+                <button class="dropbtn1">UserName</button>
+            
+                <div class="dropdown-content1">
+                  <a  href="login.html">Log out</a>
+                  
+                </div>
+              </div>
+          
+            </div>  
+                      
+          </div>
+        
+        </div>
+    
+        <div id="content-main">
+          <div id="sidebar">
+            
+    
+            <div class="dropdown">
+                <button class="dropbtn">Sales</button>
+      
+                <div class="dropdown-content">
+                  <a href="new-sale.html">New Sale</a>
+                  
+                </div>
+            </div>
+    
+            <div class="dropdown">
+                <button class="dropbtn">Inventory</button>
+    
+                <div class="dropdown-content">
+                  <a href="inventory.html">All Items</a>
+                
+                </div>
+            </div>
+    
+            
+            <div class="dropdown">
+                    <button class="dropbtn">User</button>
+                
+                    <div class="dropdown-content">
+                      <a  href="profile.html">Profile</a>                                            
+                    </div>
+            </div>         
+          </div> 
+
+      
+    
+          <div id="content-page">
+              <h1>Inventory!</h1><br><br>
+              <form class="search" action="inventory.html">
+                  <input type="text" placeholder="Search.." name="search">
+                  <button type="submit"><i class="fa fa-search"></i></button>
+                
+                </form><br>
+                
+              
+      
+              <table id="Sales">
+                  <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td>1</td>
+                    <td>Hamburger</td>
+                    <td>2</td>
+                    <td>Kes. 450</td>
+                    <td>900</td>                    
+                  </tr>
+                      
+                  <tr>
+                    <td>2</td>
+                    <td>French Fries</td>
+                    <td>2</td>
+                    <td>Kes. 520</td>
+                    <td>1040</td>
+                    
+                  </tr>
+                      
+                  <tr>
+                    <td>3</td>
+                    <td>Pizza</td>
+                    <td>1</td>
+                    <td>Kes. 300</td>
+                    <td>300</td>
+                    
+                  </tr>
+                  
+                      
+                </table>
+                    
+           
+                <a class="cat" href="new-sale.html" ><button class="addCategories">Sell <i class="fa fa-plus"></i></button></a>
+                <br><br><br><br>
+      
+      
+            </div>
+
+    </div>
+    
+    <div class="footer">
+        <p class="copyrt">&copy; 2018, Store Manager</p>
+        <p class="slogan">Move your Business to the future!</p>
+    </div>
+
+  </body>
+</html>
