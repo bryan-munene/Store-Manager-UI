@@ -1,3 +1,7 @@
+* {
+  transition: 0.8s;
+}
+
 html, body {
   font-family: Open Sans;
   font-size: 18px;
@@ -22,11 +26,8 @@ html, body {
 #account{
 	position: fixed;
 	width: 200px;
-	
 	background: #151719;
-	right: -200px;
-	
-		
+	right: -200px;		
 }
 
 
@@ -36,8 +37,7 @@ html, body {
 
 #account .toggle-btn1{
 	position: absolute;
-	right: 215px;
-	
+	right: 215px;	
 }
 
 #account .toggle-btn1 span{
@@ -80,8 +80,7 @@ html, body {
   position: absolute;
   background-color: #B8B8B8;
   z-index: 1;
-  width: 220px;
- 
+  width: 220px; 
 }
 
 .dropdown-content1 a {
@@ -110,13 +109,11 @@ html, body {
 .MainContainer {
   perspective: 1px;
   transform-style: preserve-3d;
-  height: 100vh;
- 
- 
+  height: 100vh; 
 }
+
 .About {
   letter-spacing: -8px;
-
   color: #2ab7ec;
   text-align: center;
   font-size: 80px;
@@ -130,7 +127,6 @@ html, body {
   font-size: 20px;
   text-align: justify;
 }
-
 
 .ContentContainer {
   position: relative;
@@ -148,18 +144,13 @@ html, body {
 }
 
 .TitleContainer {
-  display: flex;
-  
+  display: flex;  
   position: f;
   z-index: -1;
   height: 100vh;
-  justify-content: center;
-  
-  transform: translateZ(-1px) scale(2);
-    
+  justify-content: center;  
+  transform: translateZ(-1px) scale(2);    
 }
-
-
 
 .footer {
   position: fixed;
