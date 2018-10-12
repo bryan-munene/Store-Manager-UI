@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="HandheldFriendly" content="true">
+    
+    <title>Store Manager | Edit Category</title>
+    
+    <link rel="stylesheet" type="text/css" href="../css/tables.css">
+    <link rel="stylesheet" type="text/css" href="../css/template.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <script type="text/javascript" src="../js/validators.js"></script>
+    <script type="text/javascript" src="../js/jobs.js"></script>
+  </head>
+
+
+  <body>
+    
+        <div id = "Header">
+          <div id="logo">
+            <button><a href="dashboard.html">
+                <h1>STORE</h1>
+                <h1>MANAGER</h1>
+            </a></button>
+          </div>
+    
+          <div id="account">
+            
+            
+            <div class="account-links">
+              <div class="dropdown1">
+                <button class="dropbtn1">UserName</button>
+            
+                <div class="dropdown-content1">
+                  <a  href="login.html">Log out</a>
+                  
+                </div>
+              </div>
+          
+            </div>  
+                      
+          </div>
+        
+        </div>
+    
+        <div id="content-main">
+            <div id="sidebar">
+            
+    
+                <div class="dropdown">
+                    <button class="dropbtn">Sales</button>
+          
+                    <div class="dropdown-content">
+                      <a href="sales.html">All Sales</a>
+                      
+                    </div>
+                </div>
+        
+                <div class="dropdown">
+                    <button class="dropbtn">Inventory</button>
+        
+                    <div class="dropdown-content">
+                      <a href="new-item.html">Create New Item</a>
+                      <a href="categories.html">Item Categories</a>
+                      <a href="inventory.html">All Items</a>
+                    
+                    </div>
+                </div>
+        
+                
+    
+                <div class="dropdown">
+                        <button class="dropbtn">User</button>
+                    
+                        <div class="dropdown-content">
+                          <a  href="new-user.html">New User</a>
+                          <a  href="users.html">All Users</a>                                            
+                        </div>
+                </div>         
+              </div> 
+      
+    
+      <div id="content-page">
+          <div class="editcategories">
+              <h1>Edit Category</h1>
+              
+            <form name="categories" action="categories.html" onsubmit="validateAddCategoryForm()">
+              <input type="text" placeholder="Category ID..." name="ID" value="C-001" readonly> <br><br><br>
+  
+              
+              <input type="text" placeholder="Category Name..." name="Name" value="Taxable" required> <br><br><br>
+  
+              <textarea name="message" rows="10" placeholder="Enter a brief description here...">Products that are taxable by law </textarea>
+          
+              <input type="submit" class="edit" value="Edit" onclick="validateAddCategoryForm()"><br>
+            </form>
+  
+          </div>
+      </div>
+
+    </div>
+    
+    <div class="footer">
+        <p class="copyrt">&copy; 2018, Store Manager</p>
+        <p class="slogan">Move your Business to the future!</p>
+    </div>
+
+  </body>
+</html>
