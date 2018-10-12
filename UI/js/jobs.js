@@ -14,8 +14,3 @@ function previewFile(){
            preview.src = "";
           }
         }
-
-
-function addItem() {
-          alert ("Food has been added");
-        }

@@ -55,36 +55,42 @@ function validateAddUserForm() {
 
 function validateAddItemForm() {
     var Name = document.forms["items"]["Name"].value;
+    var Image = document.forms["items"]["Image"].value;
+    var Price = document.forms["items"]["Price"].value;
+    var Quantity = document.forms["items"]["Quantity"].value;
+    var Categories = document.forms["items"]["Categories"].value;
+
     if (Name == "") {
         alert("Name must be filled out");
         return false;
     }
 
 
-    var Image = document.forms["items"]["Image"].value;
     if (Image == "") {
         alert("Image must uploaded");
         return false;
     }
 
 
-    var Price = document.forms["items"]["Price"].value;
-    if (Price == "") {
+    
+    else if (Price == "") {
         alert("Price must be filled out");
         return false;
     }
 
 
-    var Quantity = document.forms["items"]["Quantity"].value;
-    if (Quantity == "") {
+    
+    else if (Quantity == "") {
         alert("Quantity must be filled out");
         return false;
     }
 
-    var Categories = document.forms["items"]["Categories"].value;
-    if (Categories == "none") {
+    
+    else if (Categories == "none") {
         alert("Categories must be selected");
         return false;
     }
-
+    else {
+        alert ("Item has been added");
+    }
 }
