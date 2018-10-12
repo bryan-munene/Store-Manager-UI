@@ -25,7 +25,7 @@
     color: white;
 }
 
-input[type=text], select {
+input[type=text], select, textarea {
     width: 47%;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -40,7 +40,7 @@ input[type=text], select {
     transition: width 0.4s ease-in-out;
 }
 
-input[type=text]:focus, select:focus, select option {
+input[type=text]:focus, select:focus, select option, textarea:focus {
     width: 97.5%;
 }
 
