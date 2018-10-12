@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta name="HandheldFriendly" content="true">
     
-    <title>Store Manager | Edit Item</title>
+    <title>Store Manager | Edit Category</title>
     
     <link rel="stylesheet" type="text/css" href="../css/tables.css">
     <link rel="stylesheet" type="text/css" href="../css/template.css">
@@ -84,33 +84,18 @@
       
     
       <div id="content-page">
-          <div class="addfood">
-              <h1>Edit Item</h1>
+          <div class="editcategories">
+              <h1>Edit Category</h1>
               
-            <form name="items" action="inventory.html" onsubmit="validateAddItemForm()">
-              <input type="text" placeholder="Item ID..." name="id" value="I-0001" readonly> <br><br><br>
-
-              
-              <input type="text" placeholder="Item Name..." name="Name" value="Panadol" required> <br><br><br>
-
-              <select>
-                <option value="none">None</option>
-                <option value="Taxable">Taxable</option>
-                <option value="Non-Taxable" selected>Non-Taxable</option>
-                <option value="Tax-Exempted">Tax-Exempted</option>
-                <option value="High-Margin">High-Margin</option>
-              </select><br><br>
-  
-              <input type="text" placeholder="Price..." name="Price"  value="10" required> <br><br>
-
-              <input type="text" placeholder="Quantity..." name="Quantity" value="100" required> <br><br>
-
-              <input type="file" onchange="previewFile()"><br><br>
-              <img src="" height="200" alt="Image preview..." name = "Image" required><br><br>
+            <form name="categories" action="categories.html" onsubmit="validateAddCategoryForm()">
+              <input type="text" placeholder="Category ID..." name="ID" value="C-001" readonly> <br><br><br>
   
               
+              <input type="text" placeholder="Category Name..." name="Name" value="Taxable" required> <br><br><br>
+  
+              <textarea name="message" rows="10" placeholder="Enter a brief description here...">Products that are taxable by law </textarea>
           
-              <input type="submit" class="add" value="Add" onclick="validateAddItemForm()"><br>
+              <input type="submit" class="edit" value="Edit" onclick="validateAddCategoryForm()"><br>
             </form>
   
           </div>

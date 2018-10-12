@@ -25,7 +25,7 @@
     color: white;
 }
 
-input[type=text], select {
+input[type=text], select, textarea {
     width: 47%;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -40,7 +40,7 @@ input[type=text], select {
     transition: width 0.4s ease-in-out;
 }
 
-input[type=text]:focus, select:focus, select option {
+input[type=text]:focus, select:focus, select option, textarea:focus {
     width: 97.5%;
 }
 
@@ -84,7 +84,7 @@ input[type="file"]  {
 }
 
 
-input[type="submit"], input[type="button"] {
+input[type="submit"], input[type="button"], .addCategories {
     width:auto;
     height:35px;
     padding-left: 12px;
@@ -119,16 +119,24 @@ input[type="submit"], input[type="button"] {
   }
 
 
-.edit  {
+.edit, .add  {
     background-color: #28bd03;
 }  
 
 
-.add  {
-    background-color: #28bd03;
+.addCategories  {
+    background-color: #031fbd;
 } 
 
 
 .delete  {
     background-color: #f82626;
+}  
+
+.cat {
+    text-decoration: none;
+    float: right;
+    margin-right: 5%;
+    margin-bottom: 2%;
+    position: relative;
 }  

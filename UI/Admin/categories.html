@@ -80,9 +80,68 @@
               </div> 
       
     
-      <div id="content-page">
-        CATEGORIES PAGE
-      </div>
+              <div id="content-page">
+                  <h1>Categories!</h1><br><br>
+                  <form class="search" action="categories.html">
+                      <input type="text" placeholder="Search.." name="search">
+                      <button type="submit"><i class="fa fa-search"></i></button>
+                    
+                  </form><br>
+                
+                  <a class="cat" href="add-category.html" ><button class="addCategories">ADD <i class="fa fa-plus"></i></button></a>
+                  <br><br>
+
+
+                  <table id="Sales">
+                      <tr>
+                        <th>+</th>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                      </tr>
+                      
+                    
+                      <tr>
+                        <td><a class="showhr" href="#">+</a></td>
+                        <td>1</td>
+                        <td>Taxable</td>
+                        <td>Products that are taxable by law</td>
+                        <td><form action="edit-category.html"><input type="submit" class="edit" value = "EDIT" ></form>&nbsp;&nbsp;&nbsp; <input type="button" class="delete" value = "DELETE" onclick="deletion()"></td>
+                      </tr>
+                          
+                      <tr>
+                        <td><a class="showhr" href="#">+</a></td>
+                        <td>2</td>
+                        <td>Non Taxable</td>
+                        <td>Products that are not taxable by law</td>
+                        <td><form action="edit-category.html"><input type="submit" class="edit" value = "EDIT" ></form>&nbsp;&nbsp;&nbsp; <input type="button" class="delete" value = "DELETE" onclick="deletion()"></td>
+                      </tr>
+                          
+                      <tr>
+                        <td><a class="showhr" href="#">+</a></td>  
+                        <td>3</td>
+                        <td>Tax Exempted</td>
+                        <td>Products exempted from taxation for a limited duration</td>
+                        <td><form action="edit-category.html"><input type="submit" class="edit" value = "EDIT" ></form>&nbsp;&nbsp;&nbsp; <input type="button" class="delete" value = "DELETE" onclick="deletion()"></td>
+                      </tr>
+                          
+                      <tr>
+                        <td><a class="showhr" href="#">+</a></td>
+                        <td>4</td>
+                        <td>High Margin</td>
+                        <td>Products with high profit margins</td>
+                        <td><form action="edit-category.html"><input type="submit" class="edit" value = "EDIT" ></form>&nbsp;&nbsp;&nbsp; <input type="button" class="delete" value = "DELETE" onclick="deletion()"></td>
+                      </tr>
+                       
+                          
+                    </table>
+                     
+               
+              
+          
+          
+                </div>
 
     </div>
     
