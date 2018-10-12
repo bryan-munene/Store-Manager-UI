@@ -93,4 +93,16 @@ function validateAddItemForm() {
     else {
         alert ("Item has been added");
     }
+
+}
+
+
+function validateAddCategoryForm() {
+    var Name = document.forms["categories"]["Name"].value;
+    
+    if (Name == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+
 }
