@@ -87,9 +87,10 @@
           <div class="additems">
               <h1>Add Items</h1>
               
-            <form name="items" action="inventory.html" onsubmit="validateAddItemForm()">
+            <form name="items" action="inventory.html" onsubmit="return validateAddItemForm()">
               <input type="text" placeholder="Item Name..." name="Name" required> <br><br><br>
 
+              Category:<br>
               <select>
                 <option value="none">None</option>
                 <option value="Taxable">Taxable</option>
@@ -102,12 +103,12 @@
 
               <input type="text" placeholder="Quantity..." name="Quantity" required> <br><br>
 
-              <input type="file" onchange="previewFile()"><br><br>
-              <img src="" height="200" alt="Image preview..." name = "Image" required><br><br>
+              <input type="file" onchange="previewFile()" required><br><br>
+              <img src="" height="200" alt="Image preview..." name = "Image"><br><br>
   
               
           
-              <input type="submit" class="add" value="Add" onclick="validateAddItemForm()"><br>
+              <input type="submit" class="add" value="Add"><br>
             </form>
   
           </div>

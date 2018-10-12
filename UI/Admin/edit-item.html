@@ -87,7 +87,7 @@
           <div class="addfood">
               <h1>Edit Item</h1>
               
-            <form name="items" action="inventory.html" onsubmit="validateAddItemForm()">
+            <form name="items" action="inventory.html" onsubmit="return validateAddItemForm()">
               <input type="text" placeholder="Item ID..." name="id" value="I-0001" readonly> <br><br><br>
 
               
@@ -110,7 +110,7 @@
   
               
           
-              <input type="submit" class="add" value="Add" onclick="validateAddItemForm()"><br>
+              <input type="submit" class="add" value="Add"><br>
             </form>
   
           </div>

@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta name="HandheldFriendly" content="true">
     
-    <title>Store Manager | Users</title>
+    <title>Store Manager | Edit User</title>
     
     <link rel="stylesheet" type="text/css" href="../css/tables.css">
     <link rel="stylesheet" type="text/css" href="../css/template.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script type="text/javascript" src="../js/validators.js"></script>
+    <script type="text/javascript" src="../js/jobs.js"></script>
   </head>
 
 
@@ -78,63 +81,39 @@
                         </div>
                 </div>         
               </div> 
-    
       
     
               <div id="content-page">
-                  <h1>Users!</h1><br><br>
-                  <form class="search" action="users.html">
-                      <input type="text" placeholder="Search.." name="search">
-                      <button type="submit"><i class="fa fa-search"></i></button>
-                    
-                  </form><br>
-                
-                  <a class="cat" href="new-user.html" ><button class="addCategories">ADD <i class="fa fa-plus"></i></button></a>
-                  <br><br>
-
-
-                  <table id="Sales">
-                      <tr>
-                        <th>+</th>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Level</th>
-                        <th>Action</th>
-                      </tr>
+                  <div class="additems">
+                      <h1>Create User</h1>
                       
-                    
-                      <tr>
-                        <td><a class="showhr" href="#">+</a></td>
-                        <td>1</td>
-                        <td>Bryan</td>
-                        <td>Store Admin</td>
-                        <td><form action="edit-user.html"><input type="submit" class="edit" value = "EDIT" ></form>&nbsp;&nbsp;&nbsp; <input type="button" class="delete" value = "DELETE" onclick="deletion()"></td>
-                      </tr>
-                          
-                      <tr>
-                        <td><a class="showhr" href="#">+</a></td>
-                        <td>2</td>
-                        <td>Mercy</td>
-                        <td>Store Attendant</td>
-                        <td><form action="edit-user.html"><input type="submit" class="edit" value = "EDIT" ></form>&nbsp;&nbsp;&nbsp; <input type="button" class="delete" value = "DELETE" onclick="deletion()"></td>
-                      </tr>
-                          
-                      <tr>
-                        <td><a class="showhr" href="#">+</a></td>  
-                        <td>3</td>
-                        <td>Victor</td>
-                        <td>Store Attendant</td>
-                        <td><form action="edit-user.html"><input type="submit" class="edit" value = "EDIT" ></form>&nbsp;&nbsp;&nbsp; <input type="button" class="delete" value = "DELETE" onclick="deletion()"></td>
-                      </tr>
-                                            
-                          
-                    </table>
-                     
-               
-              
+                    <form name="users" action="users.html" onsubmit="return validateAddUserForm()">
+                      <input type="text" placeholder="User ID..." name="ID" value="U-001" required> <br><br><br>
+                      
+                      
+                      <input type="text" placeholder="User Name..." name="UserName" value="Bryan" required> <br><br><br>
+        
+                      User Level:<br>
+                      <select>
+                        <option value="user">Store Attendant</option>
+                        <option value="Admin" selected>Admin</option>
+                      </select><br><br>
           
+                      <input type="text" placeholder="Email..." name="Email" value="bryanmuthuri38@gmail.com" required> <br><br>
+
+                      <input type="text" placeholder="Password..." name="password" required> <br><br>
+                      <input type="text" placeholder="Re-Type Password..." name="confirm password" required> <br><br>
+
+                      Photo: <input type="file" onchange="previewFile()" required><br><br>
+                      <img src="" height="200" alt="Image preview..." name = "Image"><br><br>
           
-                </div>
+                      
+                  
+                      <input type="submit" class="add" value="Create"><br>
+                    </form>
+          
+                  </div>
+              </div>
 
     </div>
     
