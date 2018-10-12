@@ -25,7 +25,7 @@
     color: white;
 }
 
-input[type=text] {
+input[type=text], select {
     width: 47%;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -40,8 +40,8 @@ input[type=text] {
     transition: width 0.4s ease-in-out;
 }
 
-input[type=text]:focus {
-    width: 97.8%;
+input[type=text]:focus, select:focus, select option {
+    width: 97.5%;
 }
 
 form.search button {
@@ -59,6 +59,30 @@ form.search button {
 form.search button:hover {
     background: #0b7dda;
 }
+
+input[type="file"]  {
+    background: #212324;
+    width:auto;
+    height:35px;
+    padding-left: 12px;
+    padding-right: 12px;
+    display:block;
+    font-family: sans-serif;
+    font-size:16px;
+    font-weight:bold;
+    color:#fff;
+    text-decoration:none;
+    text-transform:uppercase;
+    text-shadow:1px 1px 0px #37a69b;
+    padding-top:6px;
+    position: relative;
+    margin-top: 20px;
+    cursor:pointer;
+    border: none;  
+    border-radius: 8px;
+    box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78, 0px 10px 5px #999;
+}
+
 
 input[type="submit"], input[type="button"] {
     width:auto;
@@ -98,6 +122,12 @@ input[type="submit"], input[type="button"] {
 .edit  {
     background-color: #28bd03;
 }  
+
+
+.add  {
+    background-color: #28bd03;
+} 
+
 
 .delete  {
     background-color: #f82626;

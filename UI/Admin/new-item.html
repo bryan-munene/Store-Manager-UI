@@ -6,12 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta name="HandheldFriendly" content="true">
     
-    <title>Store Manager | Welcome</title>
+    <title>Store Manager | New Item</title>
     
-    <link rel="stylesheet" type="text/css" href="../css/tables.css">
-    <link rel="stylesheet" type="text/css" href="../css/template.css">
-    <link rel="stylesheet" type="text/css" href="../css/dash.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
   </head>
 
 
@@ -79,83 +76,36 @@
                         </div>
                 </div>         
               </div> 
-    
       
     
       <div id="content-page">
-        
-        <div class="history">
-            <div class="row">
-                <div id="Happy" class="column">
-                    <div class="card">
-                        <p><i class="fa fa-smile-o"></i></p>
-                        <h3>100+</h3>
-                        <p>Happy Clients</p>
-                      </div>
-                </div>
+          <div class="addfood">
+              <h1>Add Items</h1>
+              
+            <form name="items" action="new-item.html" onsubmit="validateAddItemForm()">
+              <input type="text" placeholder="Item Name..." name="Name" required> <br><br><br>
 
-                <div id="Successful" class="column">
-                    <div class="card">
-                        <p><i class="fa fa-check"></i></p>
-                        <h3>1000+</h3>
-                        <p>Successful Sales</p>
-                      </div>
-                </div>
+              <select>
+                <option value="none">None</option>
+                <option value="Taxable">Taxable</option>
+                <option value="Non-Taxable">Non-Taxable</option>
+                <option value="Tax-Exempted">Tax-Exempted</option>
+                <option value="High-Margin">High-Margin</option>
+              </select><br><br>
+  
+              <input type="text" placeholder="Price..." name="Price" required> <br><br>
 
-                
-            </div>    
+              <input type="text" placeholder="Quantity..." name="Quantity" required> <br><br>
 
-        </div><br><br><br>
-
-        <div class="last5">
-            <h1>Last 5 Sales!</h1><br><br>
-          <table id="Sales">
-            <tr>
-              <th>+</th>
-              <th>#</th>
-              <th>Sale ID</th>
-              <th>Date</th>
-              <th>Price</th>
-            </tr>
-            <tr>
-              <td>+</td>
-              <td>1</td>
-              <td>S419</td>
-              <td>29 September 2018</td>
-              <td>Kes. 450</td>
-            </tr>
-            <tr>
-              <td>+</td>
-              <td>2</td>
-              <td>S483</td>
-              <td>30 September 2018</td>
-              <td>Kes. 1100</td>
-            </tr>
-            <tr>
-              <td>+</td>
-              <td>3</td>
-              <td>S572</td>
-              <td>03 October 2018</td>
-              <td>Kes. 790</td>
-            </tr>
-            <tr>
-              <td>+</td>
-              <td>4</td>
-              <td>S658</td>
-              <td>07 October 2018</td>
-              <td>Kes. 300</td>
-            </tr>
-            <tr>
-              <td>+</td>
-              <td>5</td>
-              <td>S697</td>
-              <td>09 October 2018</td>
-              <td>Kes. 520</td>
-            </tr>
-          </table>
-        </div> 
-
-      
+              <input type="file" onchange="previewFile()"><br><br>
+              <img src="" height="200" alt="Image preview..." name = "Image" required><br><br>
+  
+              
+          
+              <input type="submit" class="add" value="Add" onclick="addItem()"><br>
+            </form>
+  
+          </div>
       </div>
 
     </div>
