@@ -84,7 +84,7 @@ input[type="file"]  {
 }
 
 
-input[type="submit"], input[type="button"] {
+input[type="submit"], input[type="button"], .addCategories {
     width:auto;
     height:35px;
     padding-left: 12px;
@@ -119,16 +119,24 @@ input[type="submit"], input[type="button"] {
   }
 
 
-.edit  {
+.edit, .add  {
     background-color: #28bd03;
 }  
 
 
-.add  {
-    background-color: #28bd03;
+.addCategories  {
+    background-color: #031fbd;
 } 
 
 
 .delete  {
     background-color: #f82626;
+}  
+
+.cat {
+    text-decoration: none;
+    float: right;
+    margin-right: 5%;
+    margin-bottom: 2%;
+    position: relative;
 }  
