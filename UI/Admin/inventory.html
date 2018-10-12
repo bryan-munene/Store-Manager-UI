@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="HandheldFriendly" content="true">
+    
+    <title>Store Manager | Inventory</title>
+    
+    
+  </head>
+
+
+  <body>
+    
+        <div id = "Header">
+          <div id="logo">
+            <button><a href="dashboard.html">
+                <h1>STORE</h1>
+                <h1>MANAGER</h1>
+            </a></button>
+          </div>
+    
+          <div id="account">
+            
+            
+            <div class="account-links">
+              <div class="dropdown1">
+                <button class="dropbtn1">UserName</button>
+            
+                <div class="dropdown-content1">
+                  <a  href="login.html">Log out</a>
+                  
+                </div>
+              </div>
+          
+            </div>  
+                      
+          </div>
+        
+        </div>
+    
+        <div id="content-main">
+          <div id="sidebar">
+            
+    
+            <div class="dropdown">
+                <button class="dropbtn">Sales</button>
+      
+                <div class="dropdown-content">
+                  <a href="#">All Sales</a>
+                  
+                </div>
+            </div>
+    
+            <div class="dropdown">
+                <button class="dropbtn">Inventory</button>
+    
+                <div class="dropdown-content">
+                  <a href="#">Create New Item</a>
+                  <a href="#">Create New Item Categories</a>
+                  <a href="inventory.html">All Items</a>
+                
+                </div>
+            </div>
+    
+            
+
+            <div class="dropdown">
+                    <button class="dropbtn">User</button>
+                
+                    <div class="dropdown-content">
+                      <a  href="#">Create New User</a>
+                      <a  href="#">All Users</a>                                            
+                    </div>
+            </div>         
+          </div> 
+
+      
+    
+      <div id="content-page">
+        <h1>Inventory!</h1><br><br>
+        <form class="search" action="inventory.html">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          
+        </form>
+        <br><br>
+      
+        <table id="Sales">
+            <tr>
+              <th>+</th>
+              <th>#</th>
+              <th>Name</th>
+              <th>Image</th>
+              <th>Price</th>
+              <th>Action</th>
+            </tr>
+          
+            <tr>
+              <td><a class="showhr" href="#">+</a></td>
+              <td>1</td>
+              <td>Hamburger</td>
+              <td><img src="../images/1.jpg" alt="Hamburger" height="70" width="90"></td>
+              <td>Kes. 450</td>
+              <td><form action="edit.html"><input type="submit" class="edit" value = "EDIT" ></form>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; <input type="button" class="delete" value = "DELETE" onclick="deletion()"></td>
+            </tr>
+                
+            <tr>
+              <td><a class="showhr" href="#">+</a></td>
+              <td>2</td>
+              <td>French Fries</td>
+              <td><img src="../images/2.jpg" alt="French Fries" height="70" width="90"></td>
+              <td>Kes. 520</td>
+              <td><form action="edit.html"><input type="submit" class="edit" value = "EDIT" ></form>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; <input type="button" class="delete" value = "DELETE" onclick="deletion()"></td>
+            </tr>
+                
+            <tr>
+              <td><a class="showhr" href="#">+</a></td>  
+              <td>3</td>
+              <td>Pizza</td>
+              <td><img src="../images/3.jpg" alt="Pizza" height="70" width="90"></td>
+              <td>Kes. 300</td>
+              <td><form action="edit.html"><input type="submit" class="edit" value = "EDIT" ></form>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; <input type="button" class="delete" value = "DELETE" onclick="deletion()"></td>
+            </tr>
+                
+            <tr>
+              <td><a class="showhr" href="#">+</a></td>
+              <td>4</td>
+              <td>Sandwich</td>
+              <td><img src="../images/4.jpg" alt="Sandwich" height="70" width="90"></td>
+              <td>Kes. 450</td>
+              <td><form action="edit.html"><input type="submit" class="edit" value = "EDIT" ></form>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; <input type="button" class="delete" value = "DELETE" onclick="deletion()"></td>
+            </tr>
+                
+            <tr>
+              <td><a class="showhr" href="#">+</a></td>
+              <td>5</td>
+              <td>Fried Chicken</td>
+              <td><img src="../images/5.jpg" alt="Fried Chicken" height="70" width="90"></td>
+              <td>Kes. 790</td>
+              <td><form action="edit.html"><input type="submit" class="edit" value = "EDIT" ></form>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; <input type="button" class="delete" value = "DELETE" onclick="deletion()"></td>
+            </tr>
+                
+            <tr>
+              <td><a class="showhr" href="#">+</a></td>
+              <td>6</td>
+              <td>Chicken Fingers</td>
+              <td><img src="../images/6.jpg" alt="Chicken Fingers" height="70" width="90"></td>
+              <td>Kes. 450</td>
+              <td><form action="edit.html"><input type="submit" class="edit" value = "EDIT" ></form>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; <input type="button" class="delete" value = "DELETE" onclick="deletion()"></td>
+            </tr>
+                 
+            <tr>
+              <td><a class="showhr" href="#">+</a></td>
+              <td>7</td>
+              <td>Waffles</td>
+              <td><img src="../images/7.jpg" alt="Waffles" height="70" width="90"></td>
+              <td>Kes. 1100</td>
+              <td><form action="edit.html"><input type="submit" class="edit" value = "EDIT" ></form>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; <input type="button" class="delete" value = "DELETE" onclick="deletion()"></td>
+            </tr>
+                
+            <tr>
+              <td><a class="showhr" href="#">+</a></td>
+              <td>8</td>
+              <td>Fish Fingers</td>
+              <td><img src="../images/8.jpg" alt="Fish Fingers" height="70" width="90"></td>
+              <td>Kes. 790</td>
+              <td><form action="edit.html"><input type="submit" class="edit" value = "EDIT" ></form>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; <input type="button" class="delete" value = "DELETE" onclick="deletion()"></td>
+            </tr>
+                
+            <tr>
+              <td><a class="showhr" href="#">+</a></td>
+              <td>9</td>
+              <td>Onion Rings</td>
+              <td><img src="../images/9.jpg" alt="Onion Rings" height="70" width="90"></td>
+              <td>Kes. 300</td>
+              <td><form action="edit.html"><input type="submit" class="edit" value = "EDIT" ></form>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; <input type="button" class="delete" value = "DELETE" onclick="deletion()"></td>
+            </tr>
+                
+            <tr>
+              <td><a class="showhr" href="#">+</a></td>
+              <td>10</td>
+              <td>Chicken Nuggets</td>
+              <td><img src="../images/10.jpg" alt="Chicken Nuggets" height="70" width="90"></td>
+              <td>Kes. 520</td>
+              <td><form action="edit.html"><input type="submit" class="edit" value = "EDIT" ></form>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; <input type="button" class="delete" value = "DELETE" onclick="deletion()"></td>
+            </tr>
+                
+          </table>
+           
+     
+    
+
+
+      </div>
+
+    </div>
+    
+    <div class="footer">
+        <p class="copyrt">&copy; 2018, Store Manager</p>
+        <p class="slogan">Move your Business to the future!</p>
+    </div>
+
+  </body>
+</html>
