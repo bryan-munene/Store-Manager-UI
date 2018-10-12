@@ -12,7 +12,7 @@ body {
 #Header{
     width: 96%;
     background: #234669;
-    position: absolute;
+    position: fixed;
     padding-left: 20px;
     padding-right: 30px;
     padding-bottom: 4px;
@@ -184,7 +184,7 @@ body {
   bottom: 20px;
   padding: 9px;
   overflow-x: hidden;
-  position: relative;
+  position: fixed;
   height: 84%;
   width: 80%;
   left: 17.5%;

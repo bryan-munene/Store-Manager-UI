@@ -9,12 +9,9 @@
     padding: 8px;
 }
 
-#Sales tr:nth-child(even) {
-    background-color: #f2f2f200;
-}
 
-#Sales tr:nth-child(odd) {
-    background-color: #f2f2f2;
+#Sales tr:nth-child(even) {
+    background-color: #99c5fd75;
 }
 #Sales tr:hover {
     background-color: rgb(138, 217, 248);
@@ -86,12 +83,7 @@ input[type="submit"], input[type="button"] {
     margin-left: -50px;
     cursor:pointer;
     border: none;  
-    background-color: #37a69b;
-    background-image: linear-gradient(top,#3db0a6,#3111);
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius:15px;
+    border-radius: 8px;
     box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78, 0px 10px 5px #999;
   }
   
@@ -101,3 +93,12 @@ input[type="submit"], input[type="button"] {
     box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #31524d, 0px 5px 3px #999;
     padding-bottom: 10px;
   }
+
+
+.edit  {
+    background-color: #28bd03;
+}  
+
+.delete  {
+    background-color: #f82626;
+}  
