@@ -87,12 +87,12 @@
           <div class="addcategory">
               <h1>Add Category</h1>
               
-            <form name="categories" action="categories.html" onsubmit="validateAddCategoryForm()">
+            <form name="categories" action="categories.html" onsubmit="return validateAddCategoryForm()">
               <input type="text" placeholder="Category Name..." name="Name" required> <br><br><br>
   
               <textarea name="message" rows="10" placeholder="Enter a brief description here..."></textarea>
           
-              <input type="submit" class="add" value="Add" onclick="validateAddCategoryForm()"><br>
+              <input type="submit" class="add" value="Add"><br>
             </form>
   
           </div>

@@ -30,21 +30,27 @@ function validateLoginForm() {
 }
 
 function validateAddUserForm() {
-    var email = document.forms["login"]["Email"].value;
+    var email = document.forms["users"]["Email"].value;
     if (email == "") {
         alert("Email must be filled out");
         return false;
     }
 
 
-    var password = document.forms["login"]["Password"].value;
+    var password = document.forms["users"]["password"].value;
+    var repassword = document.forms["users"]["confirm password"].value;
     if (password == "") {
         alert("Password must be filled out");
         return false;
     }
 
+    if (password != repassword) {
+        alert("Password don't match");
+        return false;
+    }
 
-    var email = document.forms["login"]["Email"].value;
+
+    var email = document.forms["users"]["Email"].value;
     var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!regex.test(email)) {
         alert('Please provide a valid email address');

@@ -87,7 +87,7 @@
           <div class="editcategories">
               <h1>Edit Category</h1>
               
-            <form name="categories" action="categories.html" onsubmit="validateAddCategoryForm()">
+            <form name="categories" action="categories.html" onsubmit="return validateAddCategoryForm()">
               <input type="text" placeholder="Category ID..." name="ID" value="C-001" readonly> <br><br><br>
   
               
@@ -95,7 +95,7 @@
   
               <textarea name="message" rows="10" placeholder="Enter a brief description here...">Products that are taxable by law </textarea>
           
-              <input type="submit" class="edit" value="Edit" onclick="validateAddCategoryForm()"><br>
+              <input type="submit" class="edit" value="Edit"><br>
             </form>
   
           </div>
