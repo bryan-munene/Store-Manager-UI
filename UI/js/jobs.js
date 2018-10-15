@@ -37,3 +37,8 @@ function deleteRow() {
           }
         }
     
+
+function sent() {
+        alert("Reset Link has been sent");
+}
+    
