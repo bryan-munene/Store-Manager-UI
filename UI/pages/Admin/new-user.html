@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta name="HandheldFriendly" content="true">
     
-    <title>Store Manager | Edit User</title>
+    <title>Store Manager | New User</title>
     
-    <link rel="stylesheet" type="text/css" href="../css/tables.css">
-    <link rel="stylesheet" type="text/css" href="../css/template.css">
+    <link rel="stylesheet" type="text/css" href="../../../static/css/tables.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/template.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-    <script type="text/javascript" src="../js/validators.js"></script>
-    <script type="text/javascript" src="../js/jobs.js"></script>
+    <script type="text/javascript" src="../../static/js/utilis/validators.js"></script>
+    <script type="text/javascript" src="../../static/js/utilis/jobs.js"></script>
   </head>
 
 
@@ -88,18 +88,15 @@
                       <h1>Create User</h1>
                       
                     <form name="users" action="users.html" onsubmit="return validateAddUserForm()">
-                      <input type="text" placeholder="User ID..." name="ID" value="U-001" required> <br><br><br>
-                      
-                      
-                      <input type="text" placeholder="User Name..." name="UserName" value="Bryan" required> <br><br><br>
+                      <input type="text" placeholder="User Name..." name="UserName" required> <br><br><br>
         
                       User Level:<br>
                       <select>
                         <option value="user">Store Attendant</option>
-                        <option value="Admin" selected>Admin</option>
+                        <option value="Admin">Admin</option>
                       </select><br><br>
           
-                      <input type="text" placeholder="Email..." name="Email" value="bryanmuthuri38@gmail.com" required> <br><br>
+                      <input type="text" placeholder="Email..." name="Email" required> <br><br>
 
                       <input type="text" placeholder="Password..." name="password" required> <br><br>
                       <input type="text" placeholder="Re-Type Password..." name="confirm password" required> <br><br>

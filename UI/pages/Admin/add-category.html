@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta name="HandheldFriendly" content="true">
     
-    <title>Store Manager | Users</title>
+    <title>Store Manager | New Category</title>
     
-    <link rel="stylesheet" type="text/css" href="../css/tables.css">
-    <link rel="stylesheet" type="text/css" href="../css/template.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/tables.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/template.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <script type="text/javascript" src="../../static/js/utilis/validators.js"></script>
+    <script type="text/javascript" src="../../static/js/utilis/jobs.js"></script>
   </head>
 
 
@@ -78,63 +81,22 @@
                         </div>
                 </div>         
               </div> 
-    
       
     
-              <div id="content-page">
-                  <h1>Users!</h1><br><br>
-                  <form class="search" action="users.html">
-                      <input type="text" placeholder="Search.." name="search">
-                      <button type="submit"><i class="fa fa-search"></i></button>
-                    
-                  </form><br>
-                
-                  <a class="cat" href="new-user.html" ><button class="addCategories">ADD <i class="fa fa-plus"></i></button></a>
-                  <br><br>
-
-
-                  <table id="Sales">
-                      <tr>
-                        <th></th>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Level</th>
-                        <th>Action</th>
-                      </tr>
-                      
-                    
-                      <tr>
-                        <td><input type="checkbox" name="chk"/></td>
-                        <td>1</td>
-                        <td>Bryan</td>
-                        <td>Store Admin</td>
-                        <td><form action="edit-user.html"><input type="submit" class="edit" value = "EDIT" ></form></td>
-                      </tr>
-                          
-                      <tr>
-                        <td><input type="checkbox" name="chk"/></td>
-                        <td>2</td>
-                        <td>Mercy</td>
-                        <td>Store Attendant</td>
-                        <td><form action="edit-user.html"><input type="submit" class="edit" value = "EDIT" ></form></td>
-                      </tr>
-                          
-                      <tr>
-                        <td><input type="checkbox" name="chk"/></td>  
-                        <td>3</td>
-                        <td>Victor</td>
-                        <td>Store Attendant</td>
-                        <td><form action="edit-user.html"><input type="submit" class="edit" value = "EDIT" ></form></td>
-                      </tr>
-                                            
-                          
-                    </table>
-                    <input type="button" class="delete" value = "DELETE" onclick="deleteRow()"><br><br><br>
-                  
+      <div id="content-page">
+          <div class="addcategory">
+              <h1>Add Category</h1>
               
+            <form name="categories" action="categories.html" onsubmit="return validateAddCategoryForm()">
+              <input type="text" placeholder="Category Name..." name="Name" required> <br><br><br>
+  
+              <textarea name="message" rows="10" placeholder="Enter a brief description here..."></textarea>
           
-          
-                </div>
+              <input type="submit" class="add" value="Add"><br>
+            </form>
+  
+          </div>
+      </div>
 
     </div>
     

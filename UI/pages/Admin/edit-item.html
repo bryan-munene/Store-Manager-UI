@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta name="HandheldFriendly" content="true">
     
-    <title>Store Manager | Profile</title>
+    <title>Store Manager | Edit Item</title>
     
-    <link rel="stylesheet" type="text/css" href="../css/tables.css">
-    <link rel="stylesheet" type="text/css" href="../css/template.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/tables.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/template.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <script type="text/javascript" src="../../static/js/utilis/validators.js"></script>
+    <script type="text/javascript" src="../../static/js/utilis/jobs.js"></script>
   </head>
 
 
@@ -81,7 +84,36 @@
       
     
       <div id="content-page">
-        PROFILE PAGE
+          <div class="addfood">
+              <h1>Edit Item</h1>
+              
+            <form name="items" action="inventory.html" onsubmit="return validateAddItemForm()">
+              <input type="text" placeholder="Item ID..." name="id" value="I-0001" readonly> <br><br><br>
+
+              
+              <input type="text" placeholder="Item Name..." name="Name" value="Panadol" required> <br><br><br>
+
+              <select>
+                <option value="none">None</option>
+                <option value="Taxable">Taxable</option>
+                <option value="Non-Taxable" selected>Non-Taxable</option>
+                <option value="Tax-Exempted">Tax-Exempted</option>
+                <option value="High-Margin">High-Margin</option>
+              </select><br><br>
+  
+              <input type="text" placeholder="Price..." name="Price"  value="10" required> <br><br>
+
+              <input type="text" placeholder="Quantity..." name="Quantity" value="100" required> <br><br>
+
+              <input type="file" onchange="previewFile()"><br><br>
+              <img src="" height="200" alt="Image preview..." name = "Image" required><br><br>
+  
+              
+          
+              <input type="submit" class="add" value="Add"><br>
+            </form>
+  
+          </div>
       </div>
 
     </div>
