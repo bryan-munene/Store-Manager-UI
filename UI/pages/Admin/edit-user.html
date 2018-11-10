@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta name="HandheldFriendly" content="true">
     
-    <title>Store Manager | Edit Category</title>
+    <title>Store Manager | Edit User</title>
     
-    <link rel="stylesheet" type="text/css" href="../css/tables.css">
-    <link rel="stylesheet" type="text/css" href="../css/template.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/tables.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/template.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-    <script type="text/javascript" src="../js/validators.js"></script>
-    <script type="text/javascript" src="../js/jobs.js"></script>
+    
+    <script type="text/javascript" src="../../static/js/utilis/validators.js"></script>
+    <script type="text/javascript" src="../../static/js/utilis/jobs.js"></script>
   </head>
 
 
@@ -83,23 +83,37 @@
               </div> 
       
     
-      <div id="content-page">
-          <div class="editcategories">
-              <h1>Edit Category</h1>
-              
-            <form name="categories" action="categories.html" onsubmit="return validateAddCategoryForm()">
-              <input type="text" placeholder="Category ID..." name="ID" value="C-001" readonly> <br><br><br>
-  
-              
-              <input type="text" placeholder="Category Name..." name="Name" value="Taxable" required> <br><br><br>
-  
-              <textarea name="message" rows="10" placeholder="Enter a brief description here...">Products that are taxable by law </textarea>
+              <div id="content-page">
+                  <div class="additems">
+                      <h1>Create User</h1>
+                      
+                    <form name="users" action="users.html" onsubmit="return validateAddUserForm()">
+                      <input type="text" placeholder="User ID..." name="ID" value="U-001" required> <br><br><br>
+                      
+                      
+                      <input type="text" placeholder="User Name..." name="UserName" value="Bryan" required> <br><br><br>
+        
+                      User Level:<br>
+                      <select>
+                        <option value="user">Store Attendant</option>
+                        <option value="Admin" selected>Admin</option>
+                      </select><br><br>
           
-              <input type="submit" class="edit" value="Edit"><br>
-            </form>
-  
-          </div>
-      </div>
+                      <input type="text" placeholder="Email..." name="Email" value="bryanmuthuri38@gmail.com" required> <br><br>
+
+                      <input type="text" placeholder="Password..." name="password" required> <br><br>
+                      <input type="text" placeholder="Re-Type Password..." name="confirm password" required> <br><br>
+
+                      Photo: <input type="file" onchange="previewFile()" required><br><br>
+                      <img src="" height="200" alt="Image preview..." name = "Image"><br><br>
+          
+                      
+                  
+                      <input type="submit" class="add" value="Create"><br>
+                    </form>
+          
+                  </div>
+              </div>
 
     </div>
     
