@@ -86,29 +86,27 @@
               <div id="content-page">
                   <div class="additems">
                       <h1>Create User</h1>
+                      <p id="response"></p>
+                      <form name="users" id="users" action="users.html" onsubmit="return validateAddUserForm()">
+                      <input type="text" placeholder="Name..." name="Name" id="Name" required> <br><br><br>
                       
-                    <form name="users" action="users.html" onsubmit="return validateAddUserForm()">
-                      <input type="text" placeholder="User Name..." name="UserName" required> <br><br><br>
+                      
+                      <input type="text" placeholder="User Name..." name="UserName" id="UserName" required> <br><br><br>
         
-                      User Level:<br>
-                      <select>
-                        <option value="user">Store Attendant</option>
-                        <option value="Admin">Admin</option>
-                      </select><br><br>
-          
-                      <input type="text" placeholder="Email..." name="Email" required> <br><br>
+                                
+                      <input type="text" placeholder="Email..." name="Email" id="Email" required> <br><br>
 
-                      <input type="text" placeholder="Password..." name="password" required> <br><br>
-                      <input type="text" placeholder="Re-Type Password..." name="confirm password" required> <br><br>
+                      <input type="text" placeholder="Password..." name="password" id="password" required> <br><br>
+                      <input type="text" placeholder="Re-Type Password..." name="confirm password" id="password2" required> <br><br>
 
-                      Photo: <input type="file" onchange="previewFile()" required><br><br>
-                      <img src="" height="200" alt="Image preview..." name = "Image"><br><br>
-          
+                      <!-- Photo: <input type="file" onchange="previewFile()" required><br><br>
+                      <img src="" height="200" alt="Image preview..." name = "Image"><br><br> -->
                       
                   
-                      <input type="submit" class="add" value="Create"><br>
+                      <input type="submit" class="add" value="Create" onclick="return Register()"><br>
                     </form>
-          
+                    <script type="text/javascript" src="../static/js/scripts/users.js"></script>
+                    
                   </div>
               </div>
 
