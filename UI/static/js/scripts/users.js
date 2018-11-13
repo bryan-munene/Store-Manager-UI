@@ -114,9 +114,49 @@ const Users = {
         .catch((error) =>{
             console.log(error);
         });
-    }
+    },
 
-    
+    // Function to add a new user
+    Register: function () {
+        document.getElementById('users');
+        
+        // Define variables
+        let url = 'http://127.0.0.1:5000/api/v2/users';
+
+        let registration_data = Users.RegistrationDetails();
+
+        let header = new Headers({
+            "content-type": "application/json",
+            "Authorization": 'Bearer ' + sessionStorage.getItem('token')
+        });
+
+        let payload = {
+            method : 'POST',
+            body : JSON.stringify(registration_data),
+            headers : header
+        };
+
+        UsersRequest = new Request(url, payload);
+
+        fetch(UsersRequest)
+        .then((res)=>res.json())
+        .then((data)=> {
+            console.log(data);
+
+            if (data.status === "created"){
+                // if request is successful
+                window.location.href = './Admin/users.html';
+            }
+            else {
+                // if request is unsuccessful
+                document.getElementById('response').style.color = 'red'
+                document.getElementById('response').innerHTML = data.message
+            }  
+        })
+        .catch((error) =>{
+            console.log(error);
+        });
+    }
 }
 
 module.exports = Users;
