@@ -1,23 +1,23 @@
-#Sales {
+#Sales, #Users {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 98%;
 }
 
-#Sales td, #Sales th {
+#Sales td, #Sales th, #User td, #Users th {
     border: 1px solid #ddd;
     padding: 8px;
 }
 
 
-#Sales tr:nth-child(even) {
+#Sales tr:nth-child(even), #Users tr:nth-child(even) {
     background-color: #99c5fd75;
 }
-#Sales tr:hover {
+#Sales tr:hover, #Users tr:hover {
     background-color: rgb(138, 217, 248);
 }
 
-#Sales th {
+#Sales th, #Users th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
