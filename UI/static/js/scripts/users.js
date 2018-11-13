@@ -156,6 +156,48 @@ const Users = {
         .catch((error) =>{
             console.log(error);
         });
+    },
+
+    // Function to logout
+    logout: function () {
+        document.getElementById('users');
+        
+        // Define variables
+        let url = 'http://127.0.0.1:5000/api/v2/logout';
+
+        let header = new Headers({
+            "content-type": "application/json",
+            "Authorization": 'Bearer ' + sessionStorage.getItem('token')
+        });
+
+        let payload = {
+            method : 'DELETE',
+            headers : header
+        };
+
+        UsersRequest = new Request(url, payload);
+
+        fetch(UsersRequest)
+        .then((res)=>res.json())
+        .then((data)=> {
+            console.log(data);
+
+            if (data.status === "logged out"){
+                // if request is successful
+                sessionStorage.removeItem('token')
+                window.location.href = './../login.html';
+                document.getElementById('response').style.color = 'green'     
+                document.getElementById('response').innerHTML = "GoodBye!"       
+            }
+            else {
+                // if request is unsuccessful
+                document.getElementById('response').style.color = 'red'
+                document.getElementById('response').innerHTML = "You are not logged in yet"
+            }  
+        })
+        .catch((error) =>{
+            console.log(error);
+        });
     }
 }
 
