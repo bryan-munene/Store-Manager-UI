@@ -30,7 +30,7 @@
             
             <div class="account-links">
               <div class="dropdown1">
-                <button class="dropbtn1">UserName</button>
+                <button class="dropbtn1" id="username" onload="return dashboard();">UserName</button>
             
                 <div class="dropdown-content1">
                   <a  href="login.html">Log out</a>
@@ -93,7 +93,7 @@
                 <div id="Successful" class="column">
                     <div class="card">
                         <p><i class="fa fa-check"></i></p>
-                        <h3>355+</h3>
+                        <h3 id= "count" onload="return dashboard();"></h3>
                         <p>Successful Sales</p>
                       </div>
                 </div>
@@ -111,8 +111,9 @@
         </div><br><br><br>
 
         <div class="last5">
-            <h1>Your Last 5 Sales!</h1><br><br>
-          <table id="Sales">
+            
+          <table id="Sales" onload="return dashboard();">
+              <h1>Your Last 5 Sales!</h1><br><br>
             <tr>
               <th>+</th>
               <th>#</th>
