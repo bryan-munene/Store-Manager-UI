@@ -2,6 +2,7 @@
 
 
 ![license](https://img.shields.io/github/license/mashape/apistatus.svg)
+[![Build Status](https://travis-ci.org/bryan-munene/Store-Manager-UI.svg?branch=gh-pages)](https://travis-ci.org/bryan-munene/Store-Manager-UI)
 
 
 Store Manager is a web application that helps store owners manage sales and product inventory records. This application is meant for use in a single store.

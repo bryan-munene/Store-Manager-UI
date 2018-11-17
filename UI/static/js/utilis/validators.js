@@ -30,15 +30,15 @@ function validateLoginForm() {
 }
 
 function validateAddUserForm() {
-    var email = document.forms["users"]["Email"].value;
+    var email = document.forms["addUsers"]["Email"].value;
     if (email == "") {
         alert("Email must be filled out");
         return false;
     }
 
 
-    var password = document.forms["users"]["password"].value;
-    var repassword = document.forms["users"]["confirm password"].value;
+    var password = document.forms["addUsers"]["password"].value;
+    var repassword = document.forms["addUsers"]["password2"].value;
     if (password == "") {
         alert("Password must be filled out");
         return false;
@@ -50,7 +50,7 @@ function validateAddUserForm() {
     }
 
 
-    var email = document.forms["users"]["Email"].value;
+    var email = document.forms["addUsers"]["Email"].value;
     var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!regex.test(email)) {
         alert('Please provide a valid email address');

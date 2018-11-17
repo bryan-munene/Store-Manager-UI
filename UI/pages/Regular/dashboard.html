@@ -12,10 +12,13 @@
     <link rel="stylesheet" type="text/css" href="../../static/css/template.css">
     <link rel="stylesheet" type="text/css" href="../../static/css/dash.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script type="text/javascript" src="../../static/js/scripts/users.js"></script>
+    
   </head>
 
 
-  <body>
+  <body onload= "Users.dashboard()">
     
         <div id = "Header">
           <div id="logo">
@@ -30,10 +33,10 @@
             
             <div class="account-links">
               <div class="dropdown1">
-                <button class="dropbtn1" id="username" onload="return dashboard();">UserName</button>
+                <button class="dropbtn1" id="username" onload="return Users.dashboard();">UserName</button>
             
                 <div class="dropdown-content1">
-                  <a  href="login.html">Log out</a>
+                  <a  href="#"  onclick="Users.logout()">Log out</a>
                   
                 </div>
               </div>
@@ -93,7 +96,7 @@
                 <div id="Successful" class="column">
                     <div class="card">
                         <p><i class="fa fa-check"></i></p>
-                        <h3 id= "count" onload="return dashboard();"></h3>
+                        <h3 id= "count"></h3>
                         <p>Successful Sales</p>
                       </div>
                 </div>
@@ -113,49 +116,7 @@
         <div class="last5">
             
           <table id="Sales" onload="return dashboard();">
-              <h1>Your Last 5 Sales!</h1><br><br>
-            <tr>
-              <th>+</th>
-              <th>#</th>
-              <th>Sale ID</th>
-              <th>Date</th>
-              <th>Price</th>
-            </tr>
-            <tr>
-              <td>+</td>
-              <td>1</td>
-              <td>S419</td>
-              <td>16 November 2017</td>
-              <td>Kes. 450</td>
-            </tr>
-            <tr>
-              <td>+</td>
-              <td>2</td>
-              <td>S483</td>
-              <td>12 December 2017</td>
-              <td>Kes. 1100</td>
-            </tr>
-            <tr>
-              <td>+</td>
-              <td>3</td>
-              <td>S572</td>
-              <td>03 January 2018</td>
-              <td>Kes. 790</td>
-            </tr>
-            <tr>
-              <td>+</td>
-              <td>4</td>
-              <td>S658</td>
-              <td>13 February 2018</td>
-              <td>Kes. 300</td>
-            </tr>
-            <tr>
-              <td>+</td>
-              <td>5</td>
-              <td>S697</td>
-              <td>19 March 2018</td>
-              <td>Kes. 520</td>
-            </tr>
+            
           </table>
         </div> 
 

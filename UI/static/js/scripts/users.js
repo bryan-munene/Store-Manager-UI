@@ -8,18 +8,18 @@ const Users = {
     },
     // function to det the input data from the registration form
     RegistrationDetails: function () {
-        name = document.getElementById('Name').value;
+        Name = document.getElementById('Name').value;
         username = document.getElementById('UserName').value;
         email = document.getElementById('Email').value;
         password = document.getElementById('password').value;
         password2 = document.getElementById('password2').value;
 
-        return {name: name,username:username,email: email,password:password,password2:password2};
+        return {name:Name,username:username,email: email,password:password,password2:password2};
     },
     
     // Function to dispaly dashboard
     dashboard: function () {
-        let token = sessionStorage.getItem('token');        
+        let token = window.localStorage.getItem('token');        
         if (!token){
             window.location.href ='./../login.html'
             document.getElementById('response').style.color = 'red'
@@ -47,17 +47,15 @@ const Users = {
         fetch(UsersRequest)
         .then((res)=>res.json())
         .then((data)=> {
-           // console.log(data);
-            //alert(data);
-
+           console.log(data);
+           
             if (data.status === "Logged in admin"){
                
-                // if request is successful
+                // if user is admin
                 data.count.forEach(function(count) {
                     document.getElementById('count').innerHTML = count.count;  
                 });
-                // document.getElementById('count').innerHTML = data.count.forEach(function(count) {
-                document.getElementById('username').innerHTML = sessionStorage.getItem('username')
+                document.getElementById('username').innerHTML = window.localStorage.getItem('username')
                 
                 let output = '<h1>Last 5 Sales!!!</h1><br><br>';
                 output += `
@@ -85,26 +83,36 @@ const Users = {
                 document.getElementById('Sales').innerHTML = output
             }
             else {
-                // if request is unsuccessful
-
-            
-                let count = data.count;
-                document.getElementById('count').innerHTML = count
-                document.getElementById('username').innerHTML = sessionStorage.getItem('username')
+               
+                // if user is not admin
+               
+                data.count.forEach(function(count) {
+                    document.getElementById('count').innerHTML = count.count;  
+                });
+                document.getElementById('username').innerHTML = window.localStorage.getItem('username')
                 
-                let sales = data.sales;
-                sales.forEach(sale => {
-                    document.getElementById('Sales').innerHTML += `<h1>"Last 5 Sales!"</h1><br><br>
+                let output = '<h1>Your Last 5 Sales!!!</h1><br><br>';
+                output += `
                     <tr>
+                        <th>+</th>
+                        <th>Sale ID</th>
+                        <th>Payment mode</th>
+                        <th>Number of Items</th>
+                        <th>Total</th>
+                        <th>Date</th>
+                    </tr> `;
+                data.sales.forEach(function(sale) {
+                   output += `
+                    <tr>
+                        <td>+</td>
                         <td>${sale.sale_id}</td>
                         <td>${sale.payment_mode}</td>
                         <td>${sale.number_of_items}</td>
                         <td>${sale.grand_total}</td>
                         <td>${sale.date_created}</td>
-                        <td>${sale.created_by}</td>
                     </tr>`
                 });
-                
+                document.getElementById('Sales').innerHTML = output
             }  
         })
         .catch((error) =>{
@@ -142,8 +150,8 @@ const Users = {
 
             if (data.status === "user logged in"){
                 // if request is successful
-                sessionStorage.setItem('token', data.token);
-                sessionStorage.setItem('username', data.username.username);
+                window.localStorage.setItem('token', data.token);
+                window.localStorage.setItem('username', data.username.username);
                 document.getElementById('response').style.color = 'green'
                 document.getElementById('response').innerHTML = data.status
                 if (data.role.is_admin === "True"){
@@ -163,20 +171,20 @@ const Users = {
             console.log(error);
         });
     },
-
+    
     // Function to add a new user
     Register: function () {
-        let token = sessionStorage.getItem('token');
+        let token = window.localStorage.getItem('token');
         if (!token){
             window.location.href ='./../login.html'
             document.getElementById('response').style.color = 'red'
             document.getElementById('response').innerHTML = "You are not logged in yet"
         }
-
-        document.getElementById('users');
+        document.getElementById('username').innerHTML = window.localStorage.getItem('username')                
+        document.getElementById('addUsers');
         
         // Define variables
-        let url = 'http://127.0.0.1:5000/api/v2/users';
+        let url = 'http://127.0.0.1:5000/api/v2/register';
 
         let registration_data = Users.RegistrationDetails();
 
@@ -200,18 +208,21 @@ const Users = {
 
             if (data.status === "created"){
                 // if request is successful
-                window.location.href = './Admin/users.html';
+                window.location.href = './users.html';
+                alert("we are here");
             }
             else if (data.status === "unauthorised"){
                 // if request is unsuccessful
                 window.location.href ='./../login.html'
                 document.getElementById('response').style.color = 'red'
                 document.getElementById('response').innerHTML = data.message
+                Users.logout();
             } 
             else {
                 // if request is unsuccessful
                 document.getElementById('response').style.color = 'red'
                 document.getElementById('response').innerHTML = data.message
+                Users.logout();
             }  
         })
         .catch((error) =>{
@@ -221,7 +232,7 @@ const Users = {
 
     // Function to logout
     logout: function () {
-        let token = sessionStorage.getItem('token');
+        let token = window.localStorage.getItem('token');
         if (!token){
             window.location.href ='./.././login.html'
             document.getElementById('response').style.color = 'red'
@@ -235,7 +246,7 @@ const Users = {
 
         let header = new Headers({
             "content-type": "application/json",
-            "Authorization": 'Bearer ' + sessionStorage.getItem('token')
+            "Authorization": 'Bearer ' + token
         });
 
         let payload = {
@@ -253,13 +264,15 @@ const Users = {
             if (data.status === "logged out"){
         
                 // if request is successful
-                sessionStorage.removeItem('token')
+                window.localStorage.removeItem('token')
+                window.localStorage.removeItem('username')
                 window.location.href = './../login.html';
                 document.getElementById('response').style.color = 'green'     
                 document.getElementById('response').innerHTML = "GoodBye!"       
             }
             else {
                 // if request is unsuccessful
+                window.location.href = './../login.html';
                 document.getElementById('response').style.color = 'red'
                 document.getElementById('response').innerHTML = "You are not logged in yet"
             }  
@@ -271,13 +284,13 @@ const Users = {
 
     // Function to get all users
     allUsers: function () {
-        let token = sessionStorage.getItem('token');
+        let token = window.localStorage.getItem('token');
         if (!token){
             window.location.href ='./../login.html'
             document.getElementById('response').style.color = 'red'
             document.getElementById('response').innerHTML = "You are not logged in yet"
         }
-
+        document.getElementById('username').innerHTML = window.localStorage.getItem('username')                
         document.getElementById('Users');
         
         // Define variables
@@ -286,7 +299,7 @@ const Users = {
         
         let header = new Headers({
             "content-type": "application/json",
-            "Authorization": 'Bearer ' + sessionStorage.getItem('token')
+            "Authorization": 'Bearer ' + token
         });
 
         let payload = {
@@ -303,12 +316,32 @@ const Users = {
 
             if (data.status === "ok"){
                 // if request is successful
-                        
+                let output = `
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Admin Level</th>
+                        <th>Select</th>
+                        <th>Action</th>
+                    </tr> `;
+                data.users.forEach(function(user) {
+                   output += `
+                    <tr>
+                        <td>${user.user_id}</td>
+                        <td>${user.name}</td>
+                        <td>${user.is_admin}</td> 
+                        <td><input type="checkbox" name="chk"/></td>
+                        <td><form action="edit-user.html"><input type="submit" class="edit" value = "EDIT" ></form></td>                       
+                    </tr>`
+                });
+                document.getElementById('Users').innerHTML = output
+                   
             }
             else {
                 // if request is unsuccessful
                 document.getElementById('response').style.color = 'red'
                 document.getElementById('response').innerHTML = data.message
+                Users.logout();
             }  
         })
         .catch((error) =>{

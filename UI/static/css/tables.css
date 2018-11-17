@@ -4,7 +4,7 @@
     width: 98%;
 }
 
-#Sales td, #Sales th, #User td, #Users th {
+#Sales td, #Sales th, #Users td, #Users th {
     border: 1px solid #ddd;
     padding: 8px;
 }
@@ -25,14 +25,13 @@
     color: white;
 }
 
-input[type=text], select, textarea {
+input[type=text], input[type=password], select, textarea {
     width: 47%;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
     background-color: white;
-    background-image: url('searchicon.png');
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
@@ -40,7 +39,7 @@ input[type=text], select, textarea {
     transition: width 0.4s ease-in-out;
 }
 
-input[type=text]:focus, select:focus, select option, textarea:focus {
+input[type=text]:focus, input[type=password]:focus, select:focus, select option, textarea:focus {
     width: 97.5%;
 }
 
