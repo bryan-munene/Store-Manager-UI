@@ -8,12 +8,12 @@
     
     <title>Store Manager | New User</title>
     
-    <link rel="stylesheet" type="text/css" href="../../../static/css/tables.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/tables.css">
     <link rel="stylesheet" type="text/css" href="../../static/css/template.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <script type="text/javascript" src="../../static/js/utilis/validators.js"></script>
-    <script type="text/javascript" src="../../static/js/utilis/jobs.js"></script>
+    <script type="text/javascript" src="../../static/js/utilis/jobs.js"></script>    
   </head>
 
 
@@ -32,10 +32,10 @@
             
             <div class="account-links">
               <div class="dropdown1">
-                <button class="dropbtn1">UserName</button>
+                <button class="dropbtn1" id="username" onload="return Users.Register();">UserName</button>
             
                 <div class="dropdown-content1">
-                  <a  href="login.html">Log out</a>
+                  <a  href="#"  onclick="Users.logout()">Log out</a>
                   
                 </div>
               </div>
@@ -86,31 +86,25 @@
               <div id="content-page">
                   <div class="additems">
                       <h1>Create User</h1>
+                      <p id="response"></p>
+                      <form name="addUsers" id="addUsers" action="#" onsubmit="return validateAddUserForm()">
+                      <input type="text" placeholder="Name..." name="Name" id="Name" required> <br><br><br>
                       
-                    <form name="users" action="users.html" onsubmit="return validateAddUserForm()">
-                      <input type="text" placeholder="User Name..." name="UserName" required> <br><br><br>
+                      
+                      <input type="text" placeholder="User Name..." name="UserName" id="UserName" required> <br><br><br>
         
-                      User Level:<br>
-                      <select>
-                        <option value="user">Store Attendant</option>
-                        <option value="Admin">Admin</option>
-                      </select><br><br>
-          
-                      <input type="text" placeholder="Email..." name="Email" required> <br><br>
+                                
+                      <input type="text" placeholder="Email..." name="Email" id="Email" required> <br><br>
 
-                      <input type="text" placeholder="Password..." name="password" required> <br><br>
-                      <input type="text" placeholder="Re-Type Password..." name="confirm password" required> <br><br>
+                      <input type="password" placeholder="Password..." name="password" id="password" required> <br><br>
+                      <input type="password" placeholder="Re-Type Password..." name="password2" id="password2" required> <br><br>
 
-                      Photo: <input type="file" onchange="previewFile()" required><br><br>
-                      <img src="" height="200" alt="Image preview..." name = "Image"><br><br>
-          
                       
-                  
-                      <input type="submit" class="add" value="Create"><br>
-                    </form>
-          
+                      <input type="button" class="add" value="Create" onclick="Users.Register()"><br>
+                    </form>                    
                   </div>
               </div>
+              <script type="text/javascript" src="../../static/js/scripts/users.js"></script>
 
     </div>
     

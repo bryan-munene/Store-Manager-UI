@@ -95,7 +95,7 @@ input[type="password"]:focus, input[type="text"]:focus {
     color: #3300CC;
 }
 
-input[type="submit"] {
+input[type="submit"], input[type="button"] {
   width:100px;
   height:35px;
   display:block;
@@ -121,7 +121,7 @@ input[type="submit"] {
   box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78, 0px 10px 5px #999;
 }
 
-input[type="submit"]:active {
+input[type="submit"]:active, input[type="button"]:active {
   top:3px;
   box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #31524d, 0px 5px 3px #999;
   padding-bottom: 10px;

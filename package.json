@@ -1,0 +1,20 @@
+{
+  "name": "Store-Manager-UI",
+  "version": "1.0.0",
+  "description": "![license](https://img.shields.io/github/license/mashape/apistatus.svg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bryan-munene/Store-Manager-UI-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bryan-munene/Store-Manager-UI-/issues"
+  },
+  "homepage": "https://github.com/bryan-munene/Store-Manager-UI-#readme"
+}

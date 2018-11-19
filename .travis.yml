@@ -1,0 +1,10 @@
+language: node_js
+
+node_js: node
+
+cache: npm
+
+script: npm jest -- -u --coverage
+
+after_success:
+  - coveralls < coverage/lcov.info
