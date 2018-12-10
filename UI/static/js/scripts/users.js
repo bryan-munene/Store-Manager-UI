@@ -1,13 +1,13 @@
 const Users = {
     // function to get the input data from the login form
-    LoginCredentials: function () {
+    loginCredentials: function () {
         email = document.getElementById('login_email').value;
         password = document.getElementById('login_password').value;
 
         return {email: email,password:password};
     },
     // function to det the input data from the registration form
-    RegistrationDetails: function () {
+    registrationDetails: function () {
         Name = document.getElementById('Name').value;
         username = document.getElementById('UserName').value;
         email = document.getElementById('Email').value;
@@ -17,6 +17,19 @@ const Users = {
         return {name:Name,username:username,email: email,password:password,password2:password2};
     },
     
+
+    // Function to handle user specifics such as token and username.
+    userSpecifics: function () {
+        let token = window.localStorage.getItem('token');        
+        if (!token){
+            window.location.href ='./../login.html'
+            document.getElementById('response').style.color = 'red'
+            document.getElementById('response').innerHTML = "You are not logged in yet"
+        }
+        
+        document.getElementById('username').innerHTML = window.localStorage.getItem('username')                
+        document.getElementById('Users');
+    },
     // Function to dispaly dashboard
     dashboard: function () {
         let token = window.localStorage.getItem('token');        
@@ -26,6 +39,7 @@ const Users = {
             document.getElementById('response').innerHTML = "You are not logged in yet"
         }
 
+        document.getElementById('username').innerHTML = window.localStorage.getItem('username')                
         document.getElementById('Users');
         
         // Define variables
@@ -55,7 +69,6 @@ const Users = {
                 data.count.forEach(function(count) {
                     document.getElementById('count').innerHTML = count.count;  
                 });
-                document.getElementById('username').innerHTML = window.localStorage.getItem('username')
                 
                 let output = '<h1>Last 5 Sales!!!</h1><br><br>';
                 output += `
@@ -121,13 +134,13 @@ const Users = {
     },
 
     // Function to handle login
-    Login: function () {
+    login: function () {
         document.getElementById('login').style.backgroundColor="#0aacad";
         
         // Define variables
         let url = 'http://127.0.0.1:5000/api/v2/login';
 
-        let login_data = Users.LoginCredentials();
+        let login_data = Users.loginCredentials();
 
         let header = new Headers({
             "content-type": "application/json"
@@ -173,7 +186,7 @@ const Users = {
     },
     
     // Function to add a new user
-    Register: function () {
+    register: function () {
         let token = window.localStorage.getItem('token');
         if (!token){
             window.location.href ='./../login.html'
@@ -186,7 +199,7 @@ const Users = {
         // Define variables
         let url = 'http://127.0.0.1:5000/api/v2/register';
 
-        let registration_data = Users.RegistrationDetails();
+        let registration_data = Users.registrationDetails();
 
         let header = new Headers({
             "content-type": "application/json",
@@ -222,7 +235,6 @@ const Users = {
                 // if request is unsuccessful
                 document.getElementById('response').style.color = 'red'
                 document.getElementById('response').innerHTML = data.message
-                Users.logout();
             }  
         })
         .catch((error) =>{
@@ -320,18 +332,18 @@ const Users = {
                     <tr>
                         <th>#</th>
                         <th>Name</th>
+                        <th>Email</th>
                         <th>Admin Level</th>
-                        <th>Select</th>
                         <th>Action</th>
                     </tr> `;
                 data.users.forEach(function(user) {
                    output += `
-                    <tr>
+                    <tr onclick="Users.getSpecificUser(${user.user_id})">
                         <td>${user.user_id}</td>
                         <td>${user.name}</td>
+                        <td>${user.email}</td>
                         <td>${user.is_admin}</td> 
-                        <td><input type="checkbox" name="chk"/></td>
-                        <td><form action="edit-user.html"><input type="submit" class="edit" value = "EDIT" ></form></td>                       
+                        <td><form action="edit-user.html"><input type="submit" class="edit" value = "EDIT" ></form> <input type="button" class="delete" value = "DELETE" onclick="Users.getSpecificUser(${user.user_id})"></td>                       
                     </tr>`
                 });
                 document.getElementById('Users').innerHTML = output
@@ -347,6 +359,104 @@ const Users = {
         .catch((error) =>{
             console.log(error);
         });
+    },
+
+    //Retrieve a specific user
+    getSpecificUser: function (id) {
+        console.log('ID PASSED HERE IS '+id);
+        let token = window.localStorage.getItem('token');
+        if (!token){
+            window.location.href ='./../login.html'
+            document.getElementById('response').style.color = 'red'
+            document.getElementById('response').innerHTML = "You are not logged in yet"
+        }
+        document.getElementById('username').innerHTML = window.localStorage.getItem('username')                
+        document.getElementById('Users');
+        
+        // Define variables
+        let url = 'http://127.0.0.1:5000/api/v2/users/'+id;
+
+        
+        let header = new Headers({
+            "content-type": "application/json",
+            "Authorization": 'Bearer ' + token
+        });
+
+        let payload = {
+            method : 'GET',
+            headers : header
+        };
+
+        UsersRequest = new Request(url, payload);
+
+        fetch(UsersRequest)
+        .then((res)=>res.json())
+        .then((data)=> {
+            console.log(data);
+
+            if (data.status === "ok"){
+                // if request is successful
+                let output = `
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Admin Level</th>
+                        <th>Action</th>
+                    </tr> `;
+                data.users.forEach(function(user) {
+                   output += `
+                    <tr>
+                        <td>${user.user_id}</td>
+                        <td>${user.name}</td>
+                        <td>${user.is_admin}</td> 
+                        <td><input type="checkbox" name="chk"/></td>
+                        <td><form action="edit-user.html"><input type="submit" class="edit" value = "EDIT" ></form> OR <input type="button" class="delete" value = "DELETE" onclick="Users.specificUserDelete()"></td>                       
+                    </tr>`
+                });
+                document.getElementById('Users').innerHTML = output
+
+                console.log("ok");
+                   
+            }
+            else {
+                // if request is unsuccessful
+                document.getElementById('response').style.color = 'red'
+                document.getElementById('response').innerHTML = data.message
+                Users.logout();
+            }  
+        })
+        .catch((error) =>{
+            console.log(error);
+        });
+    },
+
+    //Update a specific user 
+    specificUserUpdate: function () {
+        let token = window.localStorage.getItem('token');
+        if (!token){
+            window.location.href ='./../login.html'
+            document.getElementById('response').style.color = 'red'
+            document.getElementById('response').innerHTML = "You are not logged in yet"
+        }
+        document.getElementById('username').innerHTML = window.localStorage.getItem('username')
+
+    },
+
+    //Delete a specific user
+    specificUserDelete: function () {
+
+    },
+
+    //Update a user's role
+    userRole: function () {
+        let token = window.localStorage.getItem('token');
+        if (!token){
+            window.location.href ='./../login.html'
+            document.getElementById('response').style.color = 'red'
+            document.getElementById('response').innerHTML = "You are not logged in yet"
+        }
+        document.getElementById('username').innerHTML = window.localStorage.getItem('username')
+
     }
 
 }

@@ -14,37 +14,38 @@
     
     <script type="text/javascript" src="../../static/js/utilis/validators.js"></script>
     <script type="text/javascript" src="../../static/js/utilis/jobs.js"></script>
+    <script type="text/javascript" src="../../static/js/scripts/users.js"></script>   
   </head>
 
 
-  <body>
+  <body onload= "Users.userSpecifics()">
     
-        <div id = "Header">
-          <div id="logo">
-            <button><a href="dashboard.html">
-                <h1>STORE</h1>
-                <h1>MANAGER</h1>
-            </a></button>
-          </div>
-    
-          <div id="account">
-            
-            
-            <div class="account-links">
-              <div class="dropdown1">
-                <button class="dropbtn1">UserName</button>
-            
-                <div class="dropdown-content1">
-                  <a  href="login.html">Log out</a>
-                  
-                </div>
-              </div>
-          
-            </div>  
-                      
-          </div>
-        
+      <div id = "Header">
+        <div id="logo">
+          <button><a href="dashboard.html">
+              <h1>STORE</h1>
+              <h1>MANAGER</h1>
+          </a></button>
         </div>
+
+        <div id="account">
+          
+          
+          <div class="account-links">
+            <div class="dropdown1">
+              <button class="dropbtn1" id="username" onload="return Users.register();">UserName</button>
+          
+              <div class="dropdown-content1">
+                <a  href="#"  onclick="Users.logout()">Log out</a>
+                
+              </div>
+            </div>
+          
+          </div>  
+                      
+        </div>
+        
+      </div>
     
         <div id="content-main">
             <div id="sidebar">
